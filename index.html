@@ -58,17 +58,47 @@
 				<!-- Example of nested vertical slides -->
 				<section>
 					<section>
-						<h2>Vertical Slides</h2>
-						<p>Slides can be nested inside of each other.</p>
-						<p>Use the <em>Space</em> key to navigate through all slides.</p>
+						<h2>Hello, go</h2>
+						<p>package, import, main</p>
 						<br>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
+						<section data-markdown>
+						```go
+						package main
+
+						import "fmt"
+
+						func main() {
+							fmt.Println("Hello, go")
+						}
+						```
+						</section>
 					</section>
 					<section>
-						<h2>Basement Level 1</h2>
-						<p>Nested slides are useful for adding additional detail underneath a high level horizontal slide.</p>
+						<h2>Closures</h2>
+						<section data-markdown>
+							<script type="text/template">
+							```go
+							package main
+
+							import "fmt"
+							func intSeq() func() int {
+								i := 0
+								return func() int {
+									i += 1
+									return i
+								}
+							}
+							func main() {
+								nextInt := intSeq()
+								fmt.Println(nextInt()) // 1
+								fmt.Println(nextInt()) // 2
+								fmt.Println(nextInt()) // 3
+								newInts := intSeq()
+								fmt.Println(newInts()) // 1
+							}
+							```
+							</script>
+						</section>
 					</section>
 					<section>
 						<h2>Basement Level 2</h2>
